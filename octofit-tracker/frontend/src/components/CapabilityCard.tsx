@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { Children, type ReactNode } from 'react';
 
 type Props = {
   title: string;
@@ -19,7 +19,7 @@ export function CapabilityCard({ title, description, isLoading = false, error = 
           <div role="alert">{error}</div>
         ) : isLoading ? (
           <p role="status">Loading {title.toLowerCase()}…</p>
-        ) : children && React.Children.count(children) > 0 ? (
+        ) : children && Children.count(children) > 0 ? (
           children
         ) : (
           <p>{emptyMessage ?? 'No data.'}</p>

@@ -79,7 +79,7 @@ export async function createActivity(input: unknown) {
 }
 
 export async function listTeams() {
-  return Team.find().populate('members').lean();
+  return Team.find().lean();
 }
 
 export async function createTeam(input: unknown) {
